@@ -2,11 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/product_manager/server/main.js",
+      "src": "dist/server/main.js",
       "use": "@vercel/node"
     },
     {
-      "src": "dist/product_manager/browser/**",
+      "src": "dist/browser/**",
       "use": "@vercel/static"
     },
     {
