@@ -27,7 +27,7 @@ export class AppComponent {
   }
   
   public loadProducts(filter?: SearchProductFilter): void {
-    this.productService.fetchProducts(filter).subscribe(data => {
+    this.productService.fetchProducts(filter).subscribe((data: Product[]) => {
       this.products = data;
     });
   }

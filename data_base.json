@@ -1,13 +1,22 @@
 {
   "products": [
     {
-      "id": "8401",
-      "name": "qweqwe",
-      "description": "asdasdasd",
-      "price": 123,
-      "category": "wsdqwdqwd",
+      "id": "88ac",
+      "name": "Caneta",
+      "description": "Uma caneta azul",
+      "price": 14,
+      "category": "Material de escritório",
+      "featured": true,
+      "createdAt": "2025-03-14T23:12:33.630Z"
+    },
+    {
+      "id": "830d",
+      "name": "Lapis",
+      "description": "Lapis",
+      "price": 1,
+      "category": "Material escolar",
       "featured": false,
-      "createdAt": "2025-03-14T22:51:00.410Z"
+      "createdAt": "2025-03-14T23:24:40.048Z"
     }
   ]
 }
