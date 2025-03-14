@@ -1,3 +1,13 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "8401",
+      "name": "qweqwe",
+      "description": "asdasdasd",
+      "price": 123,
+      "category": "wsdqwdqwd",
+      "featured": false,
+      "createdAt": "2025-03-14T22:51:00.410Z"
+    }
+  ]
 }
