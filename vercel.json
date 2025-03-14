@@ -2,14 +2,26 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/json-server.js",
+      "src": "dist/product_manager/server/main.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/product_manager/browser/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/**/*.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/.*",
-      "dest": "/api/json-server.js"
+      "src": "/api/(.*)",
+      "dest": "api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }

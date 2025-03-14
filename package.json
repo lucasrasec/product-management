@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:product_manager": "node dist/product_manager/server/server.mjs",
-    "start:api": "json-server --watch data_base.json --port 3000"
+    "api": "json-server --watch data_base.json --port 3000"
   },
   "private": true,
   "dependencies": {
