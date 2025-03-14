@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <mat-icon aria-hidden="false" aria-label="Gerenciamento de produtos" fontIcon="inventory2" style="margin-right: 8px;"></mat-icon>
+    <span>Gerenciamento de produtos</span>
+    <span class="spacer"></span>
+    <button mat-flat-button aria-label="Criar novo produto" (click)="createProduct()">Criar produto</button>
+  </mat-toolbar-row>
+
+  @if (activeSearch) {
+    <mat-toolbar-row class="search_section">
+      <search-bar searchField="Nome" (emitSearch)="updateFilter($event, 'name')"></search-bar>
+      <search-bar searchField="Categoria" (emitSearch)="updateFilter($event, 'category')"></search-bar>
+    </mat-toolbar-row>
+  }
+</mat-toolbar>

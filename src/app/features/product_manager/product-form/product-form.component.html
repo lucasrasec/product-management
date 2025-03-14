@@ -1,0 +1,51 @@
+<form class="form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <h2> {{ action === 'create' ? 'Adicionar novo produto':'Editar produto' }} </h2>
+  <mat-form-field appearance="outline">
+    <mat-label>Nome do Produto</mat-label>
+    <input matInput formControlName="name" required />
+    @if (productForm.get('name')?.hasError('required')) {
+        <mat-error>
+            O nome do produto é obrigatório.
+        </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Preço</mat-label>
+    <input matInput type="number" formControlName="price" required />
+    @if (productForm.get('price')?.hasError('required')) {
+        <mat-error>
+            O preço é obrigatório.
+        </mat-error>
+    } @else if (productForm.get('price')?.hasError('min')) {
+        <mat-error>
+            O preço deve ser maior que 0.
+        </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Categoria</mat-label>
+    <input matInput formControlName="category" required />
+    @if (productForm.get('category')?.hasError('required')) {
+        <mat-error>
+            A categoria é obrigatória.
+        </mat-error>
+    }
+  </mat-form-field>
+
+  <p>
+    <mat-checkbox formControlName="featured">Destaque</mat-checkbox>
+  </p>
+
+  <div class="actions">
+    <button mat-raised-button type="button" aria-label="Cancelar criação" (click)="onCancel()">Cancelar</button>
+    <button mat-flat-button type="submit" aria-label="Criar produto" [disabled]="!validateForm()"> {{ action === 'create' ? 'Criar produto':'Editar produto' }} </button>
+  </div>
+
+</form>

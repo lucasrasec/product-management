@@ -1,0 +1,24 @@
+<form class="form">
+    <mat-form-field class="search_bar">
+    <mat-label>Bucar produto por {{ searchField }}</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Busca por produto">
+      @for (value of selectedValues(); track $index) {
+        <mat-chip-row (removed)="remove(value)">
+          {{value}}
+          <button matChipRemove [attr.aria-label]="'remove ' + value">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      }
+    </mat-chip-grid>
+    <input
+      name="Nome produto"
+      placeholder="Buscar por produto..."
+      #valueInput
+      [(ngModel)]="currentValue"
+      [matChipInputFor]="chipGrid"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)"
+    />
+  </mat-form-field>
+</form>

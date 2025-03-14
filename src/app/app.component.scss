@@ -1,0 +1,13 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .toolbar {
+       box-shadow: 0 3px 3px 0 rgb(124, 124, 124);
+    }
+
+    .list {
+       padding: 24px 64px;
+    }
+}

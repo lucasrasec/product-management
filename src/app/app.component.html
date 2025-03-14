@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="toolbar">
+        <toolbar (emitFilter)="searchProducts($event)" (createAction)="handleAction('create')" [activeSearch]="!productActionAtive"></toolbar>
+    </div>
+    @if (productActionAtive === 'create') {
+        <product-form [action]="productActionAtive" (emitValue)="handleFormEvent($event)"></product-form>
+    } @else if (productActionAtive === 'update') {
+        <product-form [action]="productActionAtive" [product]="activeProduct" (emitValue)="handleFormEvent($event)"></product-form>
+    } @else {
+        <div class="list">
+            <product-list [products]="products" (emitAction)="handleTableEvent($event)"></product-list>
+        </div>
+    }
+</div>
