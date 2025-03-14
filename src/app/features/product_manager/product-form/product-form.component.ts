@@ -56,8 +56,13 @@ export class ProductFormComponent implements OnInit {
   }
   
   onSubmit(): void {
+    const payload: ProductBody = {
+      ...this.productForm.value,
+      createdAt: this.product?.createdAt || new Date()
+    }
+
     if (this.validateForm()) {
-      this.emitValue.emit(this.productForm.value)
+      this.emitValue.emit(payload)
     }
   }
 

@@ -10,13 +10,13 @@
       "createdAt": "2025-03-14T23:12:33.630Z"
     },
     {
-      "id": "830d",
-      "name": "Lapis",
-      "description": "Lapis",
-      "price": 1,
+      "name": "Caderno",
+      "description": "Caderno de 10 matérias",
+      "price": 35,
       "category": "Material escolar",
-      "featured": false,
-      "createdAt": "2025-03-14T23:24:40.048Z"
+      "featured": true,
+      "createdAt": "2025-03-14T23:41:31.765Z",
+      "id": "Xg76F4w"
     }
   ]
 }

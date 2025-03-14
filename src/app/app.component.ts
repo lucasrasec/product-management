@@ -33,12 +33,7 @@ export class AppComponent {
   }
 
   public createProduct(body: ProductBody): void {
-    const payload: ProductBody = {
-      ...body,
-      createdAt: new Date()
-    }
-
-    this.productService.createProduct(payload).subscribe(() => {
+    this.productService.createProduct(body).subscribe(() => {
       this.handleActionFinilize()
     })
   }
