@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/product_manager',
+  basePath: '/product_management',
   supportedLocales: {
   "en-US": ""
 },
