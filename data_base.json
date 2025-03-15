@@ -1,31 +1,92 @@
-{
-  "products": [
-    {
-      "id": "88ac",
-      "name": "Caneta",
-      "description": "Uma caneta azul",
-      "price": 14,
-      "category": "Material de escritório",
-      "featured": true,
-      "createdAt": "2025-03-14T23:12:33.630Z"
-    },
-    {
-      "name": "Caderno",
-      "description": "Caderno de 10 matérias",
-      "price": 35,
-      "category": "Material escolar",
-      "featured": true,
-      "createdAt": "2025-03-14T23:41:31.765Z",
-      "id": "Xg76F4w"
-    },
-    {
-      "name": "Agenda",
-      "description": "Agenda do ano de 2025",
-      "price": 40,
-      "category": "Material de escritório",
-      "featured": false,
-      "createdAt": "2025-03-15T22:04:47.400Z",
-      "id": "sPYjXPV"
-    }
-  ]
-}
+[
+  {
+    "name": "Caderno",
+    "description": "Caderno de 10 matérias",
+    "price": 35,
+    "category": "Material escolar",
+    "featured": true,
+    "createdAt": "2025-03-14T23:41:31.765Z",
+    "id": "Xg76F4w"
+  },
+  {
+    "name": "Mouse Gamer",
+    "description": "Mouse óptico com 7 botões programáveis",
+    "price": 120,
+    "category": "Eletrônicos",
+    "featured": false,
+    "createdAt": "2025-03-14T23:42:10.123Z",
+    "id": "A1B2C3D4"
+  },
+  {
+    "name": "Tênis Esportivo",
+    "description": "Tênis confortável para corrida e academia",
+    "price": 250,
+    "category": "Moda",
+    "featured": true,
+    "createdAt": "2025-03-14T23:43:05.456Z",
+    "id": "Z9Y8X7W6"
+  },
+  {
+    "name": "Livro de Ficção",
+    "description": "Best-seller internacional de ficção científica",
+    "price": 60,
+    "category": "Livros",
+    "featured": false,
+    "createdAt": "2025-03-14T23:44:20.789Z",
+    "id": "KLMN1234"
+  },
+  {
+    "name": "Fone de Ouvido Bluetooth",
+    "description": "Fones sem fio com cancelamento de ruído",
+    "price": 300,
+    "category": "Eletrônicos",
+    "featured": true,
+    "createdAt": "2025-03-14T23:45:15.321Z",
+    "id": "PQRS5678"
+  },
+  {
+    "name": "Cadeira Gamer",
+    "description": "Cadeira ergonômica com ajuste de altura",
+    "price": 800,
+    "category": "Móveis",
+    "featured": false,
+    "createdAt": "2025-03-14T23:46:40.654Z",
+    "id": "UVWX9876"
+  },
+  {
+    "name": "Mochila Executiva",
+    "description": "Mochila resistente com compartimento para notebook",
+    "price": 180,
+    "category": "Acessórios",
+    "featured": true,
+    "createdAt": "2025-03-14T23:47:30.987Z",
+    "id": "QRST3456"
+  },
+  {
+    "name": "Garrafa Térmica",
+    "description": "Garrafa de aço inox com isolamento térmico",
+    "price": 90,
+    "category": "Utilidades domésticas",
+    "featured": false,
+    "createdAt": "2025-03-14T23:48:20.147Z",
+    "id": "LMNO7890"
+  },
+  {
+    "name": "Relógio Inteligente",
+    "description": "Smartwatch com monitor de saúde e notificações",
+    "price": 600,
+    "category": "Eletrônicos",
+    "featured": true,
+    "createdAt": "2025-03-14T23:49:10.678Z",
+    "id": "ABCD5678"
+  },
+  {
+    "name": "Jogo de Panelas Antiaderentes",
+    "description": "Conjunto com 5 peças em alumínio reforçado",
+    "price": 450,
+    "category": "Utilidades domésticas",
+    "featured": false,
+    "createdAt": "2025-03-14T23:50:05.432Z",
+    "id": "EFGH2345"
+  }
+]
