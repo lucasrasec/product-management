@@ -1,59 +1,84 @@
-# ProductManager
+# Product Management
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+## 📌 Sobre o Projeto
 
-## Development server
+Este é um sistema de gerenciamento de produtos, desenvolvido com **Angular** no frontend e uma API serverless no backend. A API foi inicialmente baseada no **JSON Server**, mas agora está hospedada no **Render**, garantindo maior flexibilidade e escalabilidade.
 
-To start a local development server, run:
+## 🚀 Tecnologias Utilizadas
 
-```bash
-ng serve
-```
+O projeto foi desenvolvido com as seguintes tecnologias:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### **Frontend (Angular)**
 
-## Code scaffolding
+- **Angular** (Framework principal)
+- **TypeScript** (Linguagem principal)
+- **RxJS** (Gerenciamento de estado assíncrono)
+- **Angular Material** (Componentes visuais)
+- **Testing Library / Jest** (Testes unitários)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### **Backend (API Serverless no Render)**
 
-```bash
-ng generate component component-name
-```
+- **Node.js** (Ambiente de execução)
+- **JSON Server** (Simulação de API REST)
+- **CORS** (Para permitir requisições do frontend)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Como Instalar e Rodar o Projeto
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### **1️⃣ Clonando o Repositório**
 
 ```bash
-ng build
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### **2️⃣ Instalando as Dependências**
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Execute o seguinte comando na pasta do projeto:
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
+### **3️⃣ Configuração do Ambiente**
 
-For end-to-end (e2e) testing, run:
+O projeto já possui um sistema de ambientes configurado em `src/environments/`:
+
+- **`environment.ts`** → Ambiente de desenvolvimento (localhost)
+- **`environment.prod.ts`** → Ambiente de produção (API hospedada no Render)
+
+Se necessário, edite os arquivos com as URLs corretas:
+
+```typescript
+export const environment = {
+  production: true,
+  apiUrl: 'https://product-management-zgbh.onrender.com'
+};
+```
+
+### **4️⃣ Rodando o Projeto**
+
+Para rodar a aplicação localmente, execute:
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Acesse: **`http://localhost:4200`**
 
-## Additional Resources
+Rodar o server localmente, execute: 
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+npm run api
+```
+
+Assim o server irá escutar **`http://localhost:3000`**
+
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
+
+---
+
+📢 **Dúvidas ou sugestões?** Entre em contato!
+
