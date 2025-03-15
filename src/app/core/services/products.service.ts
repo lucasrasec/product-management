@@ -25,18 +25,18 @@ export class ProductsService {
       });
     }
 
-    return this.http.get<Product[]>(this.url, { params })
+    return this.http.get<Product[]>(`${this.url}/products`, { params })
   }
 
   createProduct(body: ProductBody): Observable<Product> {
-    return this.http.post<Product>(this.url, body);
+    return this.http.post<Product>(`${this.url}/products`, body);
   }
 
   updateProduct(id: string, product: ProductBody): Observable<Product> {
-    return this.http.put<Product>(`${this.url}/${id}`, product);
+    return this.http.put<Product>(`${this.url}/products/${id}`, product);
   }
 
   deleteProduct(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.url}/${id}`);
+    return this.http.delete<void>(`${this.url}/products/${id}`);
   }
 }
