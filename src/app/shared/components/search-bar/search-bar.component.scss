@@ -1,6 +1,20 @@
 .form {
-  width: 600px;
-  display: block;
+  min-width: 600px; 
+  width: 90%; 
+  margin: 0 auto; 
+  padding: 20px; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    width: 100%; 
+    min-width: unset; 
+    max-width: unset; 
+    padding: 10px; 
+  }
 
   .search_bar {
     width: 100%;
