@@ -17,6 +17,15 @@
       "featured": true,
       "createdAt": "2025-03-14T23:41:31.765Z",
       "id": "Xg76F4w"
+    },
+    {
+      "name": "Agenda",
+      "description": "Agenda do ano de 2025",
+      "price": 40,
+      "category": "Material de escritório",
+      "featured": false,
+      "createdAt": "2025-03-15T22:04:47.400Z",
+      "id": "sPYjXPV"
     }
   ]
 }

@@ -1,10 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProductListComponent } from './features/product_manager/product-list/product-list.component';
 import { ToolbarComponent } from './features/toolbar/toolbar.component';
 import { ProductsService } from './core/services/products.service';
 import { Product, ProductBody, SearchProductFilter } from './shared/models/product';
 import { ProductFormComponent } from './features/product_manager/product-form/product-form.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { throwError } from 'rxjs';
+
+type ACTIONS = 'create' | 'update' | '';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +16,13 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public products: Product[] = [];
-  public productActionAtive = '';
-  public activeProduct!: Product;
-  private _snackBar = inject(MatSnackBar);
-  public currentFilter!: SearchProductFilter;
+  private readonly snackBar = inject(MatSnackBar);
+  private readonly productService = inject(ProductsService)
 
-  constructor(private productService: ProductsService) {}
+  public products = signal<Product[]>([]);
+  public productActionAtive = signal<ACTIONS>('');
+  public activeProduct!: Product;
+  public currentFilter!: SearchProductFilter;
 
   public searchProducts(filter: SearchProductFilter): void {
     this.currentFilter = filter;
@@ -27,8 +30,10 @@ export class AppComponent {
   }
   
   public loadProducts(filter?: SearchProductFilter): void {
-    this.productService.fetchProducts(filter).subscribe((data: Product[]) => {
-      this.products = data;
+    this.productService.fetchProducts(filter).subscribe({
+      next: (products) => this.products.set(products),
+      error: (error) => throwError(() => `Erro ao carregar produtos. ${error}`)
+      
     });
   }
 
@@ -51,11 +56,11 @@ export class AppComponent {
   }
 
   openSnackBar(message: string) {
-    this._snackBar.open(message, 'Ok', { duration: 3000 });
+    this.snackBar.open(message, 'Ok', { duration: 3000 });
   }
 
-  public handleAction(action: string): void {
-    this.productActionAtive = action;
+  public handleAction(action: ACTIONS): void {
+    this.productActionAtive.set(action);
   }
 
   public handleFormEvent(data: ProductBody | null): void {
@@ -64,7 +69,7 @@ export class AppComponent {
     return;
   }
 
-  switch (this.productActionAtive) {
+  switch (this.productActionAtive()) {
     case 'create':
       this.createProduct(data);
       break;
@@ -85,6 +90,6 @@ export class AppComponent {
   } 
   
   ngOnInit(): void {
-    this.loadProducts()
+    this.loadProducts();
   }
 }

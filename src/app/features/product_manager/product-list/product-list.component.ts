@@ -15,7 +15,7 @@ import { take } from 'rxjs';
   styleUrl: './product-list.component.scss'
 })
 export class ProductListComponent {
-  public displayedColumns: string[] = ['name', 'description', 'category', 'price', 'createdAt', 'featured', 'actions'];
+  public  readonly displayedColumns: string[] = ['name', 'description', 'category', 'price', 'createdAt', 'featured', 'actions'];
   @Input() products: Product[] = [];
   @Output() emitAction = new EventEmitter<Product>();
 

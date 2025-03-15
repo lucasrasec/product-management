@@ -44,7 +44,6 @@ export class SearchBarComponent {
 
         return products
       });
-      console.log('adicionando produto');
       this.emitFilter();
       if (change) this.resetInputFild();
     }
